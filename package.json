@@ -1,0 +1,51 @@
+{
+	"name": "vite-plugin-iso-import",
+	"description": "Import modules isomorphically",
+	"version": "0.0.1",
+	"author": "Bjorn Lu",
+	"license": "MIT",
+	"type": "module",
+	"types": "./index.d.ts",
+	"main": "./index.cjs",
+	"module": "./index.js",
+	"exports": {
+		"import": "./index.js",
+		"require": "./index.cjs"
+	},
+	"files": [
+		"index.js",
+		"index.cjs",
+		"index.d.ts"
+	],
+	"homepage": "https://github.com/bluwy/vite-plugin-iso-import",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/bluwy/vite-plugin-iso-import.git"
+	},
+	"bugs": {
+		"url": "https://github.com/bluwy/vite-plugin-iso-import/issues"
+	},
+	"keywords": [
+		"vite",
+		"plugin",
+		"isomorphic",
+		"import"
+	],
+	"scripts": {
+		"build": "rollup index.js -f cjs -o index.cjs -e magic-string,es-module-lexer",
+		"test-dev": "vite --debug",
+		"test-build": "pnpm test-build:client && pnpm test-build:server",
+		"test-build:client": "vite build --debug --outDir test-dist/client",
+		"test-build:server": "vite build --debug --outDir test-dist/server --ssr test/main.js",
+		"prepublishOnly": "pnpm build"
+	},
+	"dependencies": {
+		"es-module-lexer": "^0.7.1",
+		"magic-string": "^0.25.7"
+	},
+	"devDependencies": {
+		"@types/node": "^16.3.1",
+		"rollup": "^2.53.1",
+		"vite": "^2.4.1"
+	}
+}
