@@ -1,8 +1,8 @@
 import MagicString from 'magic-string'
 import { init, parse } from 'es-module-lexer'
 
-const clientRE = /(?:\?|&)client(&|$)/
-const serverRE = /(?:\?|&)server(&|$)/
+const clientRE = /(\?|&)client(&|$)/
+const serverRE = /(\?|&)server(&|$)/
 
 /**
  * Isomorphically import modules on client or server context
@@ -33,7 +33,7 @@ export function isoImport() {
           // "?client&foo"     => "?foo"
           // "?foo&client"     => "?foo"
           // "?foo&client&bar" => "?foo&bar"
-          s().overwrite(i.s + m.index, i.s + m.index + m[0].length, m[1])
+          s().overwrite(i.s + m.index, i.s + m.index + m[0].length, m[2] ? m[1] : '')
         } else if ((m = i.n.match(ripRE))) {
           s().overwrite(i.ss, i.se, '')
         }
