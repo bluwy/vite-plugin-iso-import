@@ -5,6 +5,7 @@ specifiers:
   es-module-lexer: ^0.7.1
   magic-string: ^0.25.7
   rollup: ^2.53.1
+  typescript: ^4.3.5
   vite: ^2.4.1
 
 dependencies:
@@ -14,6 +15,7 @@ dependencies:
 devDependencies:
   '@types/node': 16.3.1
   rollup: 2.53.1
+  typescript: 4.3.5
   vite: 2.4.1
 
 packages:
@@ -116,6 +118,12 @@ packages:
   /sourcemap-codec/1.4.8:
     resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
     dev: false
+
+  /typescript/4.3.5:
+    resolution: {integrity: sha512-DqQgihaQ9cUrskJo9kIyW/+g0Vxsk8cDtZ52a3NGh0YNTfpUSArXSohyUGnvbPazEPLu398C0UxmKSOrPumUzA==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+    dev: true
 
   /vite/2.4.1:
     resolution: {integrity: sha512-4BpKRis9uxIqPfIEcJ18LTBsamqnDFxTx45CXwagHjNltHa6PFEvf8Pe6OpgIHb0OyWT30OXOSSQvdOaX4OBiQ==}

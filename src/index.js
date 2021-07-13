@@ -48,3 +48,36 @@ export function isoImport() {
     }
   }
 }
+
+/**
+ * TypeScript plugin to correctly resolve ?client and ?server imports
+ */
+export default function tsPlugin() {
+  /**
+   * @param {ts.server.PluginCreateInfo} info
+   */
+  function create(info) {
+    // Thanks: https://github.com/sveltejs/language-tools/blob/6e0396ca18ea5e7da801468eab35cdef43b3c979/packages/typescript-plugin/src/module-loader.ts#L56
+    const originalResolveModuleNames = info.languageServiceHost.resolveModuleNames.bind(info.languageServiceHost)
+    info.languageServiceHost.resolveModuleNames = (moduleNames, ...args) => {
+      const newModuleNames = moduleNames.map(
+        (name) =>
+          name
+            .replace(clientRE, (_, $1, $2) => ($2 ? $1 : '')) // Strip ?client
+            .replace(serverRE, (_, $1, $2) => ($2 ? $1 : '')) // Strip ?server
+      )
+      return originalResolveModuleNames(newModuleNames, ...args)
+    }
+
+    return info.languageService
+  }
+
+  return { create }
+}
+
+// TypeScript only loads plugins via cjs with `module.exports`
+if (typeof module !== 'undefined') {
+  module.exports = tsPlugin
+  tsPlugin.default = tsPlugin
+  tsPlugin.isoImport = isoImport
+}

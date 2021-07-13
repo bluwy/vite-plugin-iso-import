@@ -37,9 +37,23 @@ export default defineCnfig({
 
 ## FAQ
 
-Q: What happens if I use an import value that has been stripped off?
+> Q: What happens if I use an import value that has been stripped off?
 
 A: You'll get a usual JS error of the value being unreferenced/undefined. Instead, you should always wrap these environment-specific code with `import.meta.env.SSR`.
+
+> Q: Using `?client` and `?server` loses intellisense.
+
+A: The library exports a custom TypeScript plugin that fixes it. Simply update your `jsconfig.json` or `tsconfig.json` like so:
+
+```json
+{
+  "compilerOptions": {
+    "plugins": [{ "name": "vite-plugin-iso-import" }]
+  }
+}
+```
+
+And update VSCode's `settings.json` with `"typescript.tsserver.pluginPaths": ["."]`. (Optional if using workspace Typescript version).
 
 ## License
 
