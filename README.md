@@ -25,9 +25,15 @@ import { bar } from './server-module'
 
 ## Installation
 
-```js
-// vite.config.js
+Install library:
 
+```bash
+$ npm i -D vite-plugin-iso-import
+```
+
+Add plugin to `vite.config.js`:
+
+```js
 import { isoImport } from 'vite-plugin-iso-import'
 
 export default defineCnfig({
@@ -37,13 +43,13 @@ export default defineCnfig({
 
 ## FAQ
 
-> Q: What happens if I use an import value that has been stripped off?
+### What happens if I use an import value that has been stripped off?
 
-A: You'll get a usual JS error of the value being unreferenced/undefined. Instead, you should always wrap these environment-specific code with `import.meta.env.SSR`.
+You'll get a usual JS error of the value being unreferenced/undefined. Instead, you should always wrap these environment-specific code with `import.meta.env.SSR`.
 
-> Q: Using `?client` and `?server` loses intellisense.
+### Using `?client` and `?server` loses intellisense
 
-A: The library exports a custom TypeScript plugin that fixes it. Simply update your `jsconfig.json` or `tsconfig.json` like so:
+The library exports a custom TypeScript plugin that fixes it. Simply update your `jsconfig.json` or `tsconfig.json` like so:
 
 ```json
 {
@@ -53,7 +59,9 @@ A: The library exports a custom TypeScript plugin that fixes it. Simply update y
 }
 ```
 
-And update VSCode's `settings.json` with `"typescript.tsserver.pluginPaths": ["."]`. (Optional if using workspace Typescript version).
+If you're using the VSCode-bundled TypeScript version, you have to update VSCode's `settings.json` with `"typescript.tsserver.pluginPaths": ["."]`. (Or a path to the project that contains the `node_modules` folder)
+
+Also note that this currently does not work for Vue and Svelte files. The language services are unable to load TypeScript plugins.
 
 ## License
 

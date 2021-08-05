@@ -50,11 +50,12 @@ export function isoImport() {
 }
 
 /**
- * TypeScript plugin to correctly resolve ?client and ?server imports
+ * TypeScript plugin to correctly resolve ?client and ?server imports.
+ * Only works for JS and TS files. Vue and Svelte are not supported.
  */
 export default function tsPlugin() {
   /**
-   * @param {ts.server.PluginCreateInfo} info
+   * @param {import('typescript/lib/tsserverlibrary').server.PluginCreateInfo} info
    */
   function create(info) {
     // Thanks: https://github.com/sveltejs/language-tools/blob/6e0396ca18ea5e7da801468eab35cdef43b3c979/packages/typescript-plugin/src/module-loader.ts#L56
