@@ -31,6 +31,7 @@
 		"import"
 	],
 	"scripts": {
+		"dev": "rollup -cw",
 		"build": "rollup -c",
 		"test-dev": "vite --debug",
 		"test-build": "pnpm test-build:client && pnpm test-build:server",
