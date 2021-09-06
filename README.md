@@ -61,7 +61,15 @@ The library exports a custom TypeScript plugin that fixes it. Simply update your
 
 If you're using the VSCode-bundled TypeScript version, you have to update VSCode's `settings.json` with `"typescript.tsserver.pluginPaths": ["."]`. (Or a path to the project that contains the `node_modules` folder)
 
-Also note that this currently does not work for Vue and Svelte files. The language services are unable to load TypeScript plugins.
+Also note that this currently does not work for Vue and Svelte files. The language services are unable to load TypeScript plugins. At the meantime, you can use this suboptimal solution for npm packages only:
+
+```ts
+// global.d.ts (are any ambient dts file)
+declare module 'lodash-es?client' {
+  import * as all from 'lodash-es'
+  export = all
+}
+```
 
 ## License
 
