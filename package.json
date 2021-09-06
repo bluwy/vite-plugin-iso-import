@@ -1,15 +1,18 @@
 {
 	"name": "vite-plugin-iso-import",
 	"description": "Import modules isomorphically",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"author": "Bjorn Lu",
 	"license": "MIT",
 	"types": "./index.d.ts",
 	"main": "./dist/index.js",
 	"module": "./dist/index.mjs",
 	"exports": {
-		"import": "./dist/index.mjs",
-		"require": "./dist/index.js"
+		"./package.json": "./package.json",
+		".": {
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js"
+		}
 	},
 	"files": [
 		"dist/index.js",
