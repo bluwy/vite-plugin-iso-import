@@ -21,7 +21,11 @@ export function isoImport() {
         }
       }
     },
-    async transform(code, id, ssr) {
+    async transform(code, id, opts) {
+      // Support breaking change in Vite 2.7
+      // The third argument now contains an object with ssr property, instead of just the ssr boolean
+      const ssr = opts === true || opts?.ssr
+
       await init
 
       let _s
