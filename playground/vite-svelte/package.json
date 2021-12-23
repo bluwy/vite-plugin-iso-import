@@ -11,6 +11,11 @@
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
     "svelte": "^3.44.0",
-    "vite": "^2.7.2"
+    "vite": "^2.7.2",
+    "vite-plugin-iso-import": "workspace:*"
+  },
+  "dependencies": {
+    "camelcase": "^6.2.1",
+    "lodash-es": "^4.17.21"
   }
 }

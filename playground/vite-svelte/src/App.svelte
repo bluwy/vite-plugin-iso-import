@@ -1,3 +1,18 @@
+<script>
+  import { foo } from './lib/client-module?client'
+  import { hey } from './lib/server-module?server'
+  import camelcase from 'camelcase?client'
+  import { truncate } from 'lodash-es?server'
+
+  if (import.meta.env.SSR) {
+    console.log('foo', foo)
+    console.log(camelcase('camel_case'))
+  } else {
+    console.log('hey', hey)
+    console.log(truncate('hello', { length: 3 }))
+  }
+</script>
+
 <main>
   <h1>Hello world!</h1>
 

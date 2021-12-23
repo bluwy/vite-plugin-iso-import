@@ -11,7 +11,12 @@
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
-    "svelte": "^3.44.0"
+    "svelte": "^3.44.0",
+    "vite-plugin-iso-import": "workspace:*"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "camelcase": "^6.2.1",
+    "lodash-es": "^4.17.21"
+  }
 }
