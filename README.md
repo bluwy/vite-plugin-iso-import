@@ -65,10 +65,22 @@ Also note that this currently does not work for Vue and Svelte files. The langua
 
 ```ts
 // global.d.ts (or any ambient dts file)
-declare module 'lodash-es?client' {
+
+// default export
+declare module 'camelcase?client' {
+  import all from 'camelcase'
+  export = all
+}
+
+// named export
+declare module 'lodash-es?server' {
   import * as all from 'lodash-es'
   export = all
 }
+
+// fallback
+declare module '*?client'
+declare module '*?server'
 ```
 
 ## License
