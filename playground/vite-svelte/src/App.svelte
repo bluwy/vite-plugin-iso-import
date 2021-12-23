@@ -4,12 +4,12 @@
   import camelcase from 'camelcase?client'
   import { truncate } from 'lodash-es?server'
 
-  if (import.meta.env.SSR) {
+  if (!import.meta.env.SSR) {
     console.log('foo', foo)
     console.log(camelcase('camel_case'))
   } else {
     console.log('hey', hey)
-    console.log(truncate('hello', { length: 3 }))
+    console.log(truncate('hello world', { length: 8 }))
   }
 </script>
 

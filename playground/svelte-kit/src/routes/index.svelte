@@ -1,4 +1,5 @@
 <script>
+  import { browser } from '$app/env'
   import { foo } from '$lib/client-module?client'
   import { hey } from '$lib/server-module?server'
   import camelcase from 'camelcase?client'
@@ -10,7 +11,7 @@
     console.log(camelcase('camel_case'))
   } else {
     console.log('hey', hey)
-    console.log(truncate('hello', { length: 3 }))
+    console.log(truncate('hello world', { length: 8 }))
   }
 </script>
 
