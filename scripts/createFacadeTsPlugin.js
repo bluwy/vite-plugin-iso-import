@@ -1,5 +1,5 @@
-const fs = require('fs')
-const path = require('path')
+import fs from 'fs'
+import path from 'path'
 
 // https://stackoverflow.com/a/66504080/13265944
 // TypeScript only loads plugins from node_modules for "security reasons".
