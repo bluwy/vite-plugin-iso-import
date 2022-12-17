@@ -4,19 +4,16 @@
 	"version": "0.1.3",
 	"author": "Bjorn Lu",
 	"license": "MIT",
+	"type": "module",
 	"types": "./index.d.ts",
-	"main": "./dist/index.js",
-	"module": "./dist/index.mjs",
 	"exports": {
-		"./package.json": "./package.json",
 		".": {
-			"import": "./dist/index.mjs",
-			"require": "./dist/index.js"
+			"import": "./src/index.js",
+			"require": "./src/index.cjs"
 		}
 	},
 	"files": [
-		"dist/index.js",
-		"dist/index.mjs",
+		"src",
 		"index.d.ts"
 	],
 	"homepage": "https://github.com/bluwy/vite-plugin-iso-import",
@@ -34,19 +31,17 @@
 		"import"
 	],
 	"scripts": {
-		"dev": "rollup -cw",
-		"build": "rollup -c",
-		"why-ts-plugin": "node scripts/createFacadeTsPlugin.js",
-		"prepublishOnly": "pnpm build"
+		"why-ts-plugin": "node scripts/createFacadeTsPlugin.js"
 	},
 	"dependencies": {
-		"es-module-lexer": "^0.9.3",
-		"magic-string": "^0.25.7"
+		"es-module-lexer": "^1.1.0",
+		"magic-string": "^0.27.0"
+	},
+	"peerDependencies": {
+		"vite": "^2.0.0 || ^3.0.0 || ^4.0.0"
 	},
 	"devDependencies": {
-		"@types/node": "^17.0.2",
-		"rollup": "^2.61.1",
-		"typescript": "^4.5.4",
-		"vite": "^2.7.6"
+		"@types/node": "^18.11.16",
+		"vite": "^4.0.1"
 	}
 }

@@ -1,5 +1,5 @@
 <script>
-  import { browser } from '$app/env'
+  import { browser } from '$app/environment'
   import { foo } from '$lib/client-module?client'
   import { hey } from '$lib/server-module?server'
   import camelcase from 'camelcase?client'
