@@ -10,6 +10,6 @@ import path from 'path'
 const dirPath = path.resolve(process.cwd(), 'node_modules/plugin')
 if (!fs.existsSync(dirPath)) fs.mkdirSync(dirPath)
 fs.writeFileSync(path.resolve(dirPath, './package.json'), '{"name":"plugin"}', { encoding: 'utf-8' })
-fs.writeFileSync(path.resolve(dirPath, './index.js'), 'module.exports = require("../../dist/index.js")', {
+fs.writeFileSync(path.resolve(dirPath, './index.js'), 'module.exports = require("../../src/index.cjs")', {
   encoding: 'utf-8'
 })

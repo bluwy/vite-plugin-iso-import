@@ -7,12 +7,14 @@ importers:
       '@types/node': ^18.11.16
       es-module-lexer: ^1.1.0
       magic-string: ^0.27.0
+      typescript: ^4.9.4
       vite: ^4.0.1
     dependencies:
       es-module-lexer: 1.1.0
       magic-string: 0.27.0
     devDependencies:
       '@types/node': 18.11.16
+      typescript: 4.9.4
       vite: 4.0.1_@types+node@18.11.16
 
   playground/svelte-kit:
@@ -574,6 +576,12 @@ packages:
   /totalist/3.0.0:
     resolution: {integrity: sha512-eM+pCBxXO/njtF7vdFsHuqb+ElbxqtI4r5EAvk6grfAFyJ6IvWlSkfZ5T9ozC6xWw3Fj1fGoSmrl0gUs46JVIw==}
     engines: {node: '>=6'}
+    dev: true
+
+  /typescript/4.9.4:
+    resolution: {integrity: sha512-Uz+dTXYzxXXbsFpM86Wh3dKCxrQqUcVMxwU54orwlJjOpO3ao8L7j5lH+dWfTwgCwIuM9GQ2kvVotzYJMXTBZg==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
     dev: true
 
   /undici/5.14.0:
