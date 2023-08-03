@@ -14,9 +14,9 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "2.1.0",
-    "@sveltejs/kit": "^1.18.0",
-    "svelte": "^3.59.1",
-    "vite": "^4.3.8",
+    "@sveltejs/kit": "^1.22.4",
+    "svelte": "^3.59.2",
+    "vite": "^4.4.8",
     "vite-plugin-iso-import": "workspace:*"
   }
 }
