@@ -28,6 +28,7 @@ function isoImport() {
 
       await init
 
+      /** @type {import('magic-string').default} */
       let _s
       const s = () => _s || (_s = new MagicString(code))
       const [imports] = parse(code)
@@ -55,7 +56,7 @@ function isoImport() {
       if (_s) {
         return {
           code: _s.toString(),
-          map: _s.generateMap()
+          map: _s.generateMap({ hires: 'boundary' })
         }
       }
     }
