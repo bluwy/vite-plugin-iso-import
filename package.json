@@ -1,7 +1,7 @@
 {
 	"name": "vite-plugin-iso-import",
 	"description": "Import modules isomorphically",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"author": "Bjorn Lu",
 	"license": "MIT",
 	"type": "module",

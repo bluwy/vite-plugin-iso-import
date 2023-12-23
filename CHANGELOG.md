@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.0 (2023-12-23)
+
+- Support Vite 5
+- Improve generated sourcemap resolution
+
 ## 1.0.0 (2022-12-17)
 
 Release v1. Compared to v0:
