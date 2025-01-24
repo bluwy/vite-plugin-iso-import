@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.0 (2025-01-25)
+
+- Support Vite 6
+- Fix types export
+
 ## 1.1.0 (2023-12-23)
 
 - Support Vite 5
