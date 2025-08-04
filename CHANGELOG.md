@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.0 (2025-08-04)
+
+- Support Vite 7
+- Fix TypeScript plugin export by re-adding the `"main"` field in `package.json` that was removed in v1 ([#20](https://github.com/bluwy/vite-plugin-iso-import/issues/20))
+
 ## 1.2.0 (2025-01-25)
 
 - Support Vite 6
